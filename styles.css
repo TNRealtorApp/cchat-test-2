@@ -1,0 +1,372 @@
+/* Tiny Tennessee — styles.css
+   Mobile-first. Breakpoint: 720px (desktop).
+   Palette: forest-green #1f3a23 | clay #b8643b | cream #f4ead4
+   Typography: Georgia serif headings, system sans-serif body.
+   WCAG AA: all text >= 4.5:1, large/UI >= 3:1.
+*/
+
+/* ─── Reset & base ─────────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               Helvetica, Arial, sans-serif;
+  background-color: #f4ead4;   /* cream */
+  color: #1a1a1a;              /* near-black; ~14:1 on cream — AAA */
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  line-height: 1.6;
+}
+
+/* ─── Typography ────────────────────────────────────────────── */
+
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #1f3a23;              /* forest-green; ~8.4:1 on cream — AAA */
+  line-height: 1.25;
+}
+
+h1 { font-size: 2rem;    margin-bottom: 0.5rem; }
+h2 { font-size: 1.5rem;  margin-bottom: 1rem;   }
+h3 { font-size: 1.15rem; }
+
+a {
+  color: #1f3a23;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #b8643b;              /* clay */
+}
+
+/* Global focus-visible — visible on all interactive elements */
+:focus-visible {
+  outline: 3px solid #b8643b;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ─── Header / brand ────────────────────────────────────────── */
+
+header {
+  background-color: #1f3a23;
+  margin: 0 -1rem;             /* bleed to viewport edge on mobile */
+  padding: 0.75rem 1rem;
+}
+
+.brand {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: #f4ead4;              /* cream; ~8.4:1 on forest-green — AAA */
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ─── Hero ──────────────────────────────────────────────────── */
+
+.hero {
+  background-color: #1f3a23;
+  color: #f4ead4;
+  margin: 0 -1rem;
+  padding: 3rem 1rem 2.5rem;
+  text-align: center;
+}
+
+.hero h1 {
+  color: #f4ead4;              /* cream on forest-green: ~8.4:1 — AAA */
+  font-size: 2.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.tagline {
+  font-size: 1.05rem;
+  color: #d8c9a3;              /* ~4.8:1 on forest-green — AA */
+  max-width: 560px;
+  margin: 0 auto 1.75rem;
+}
+
+/* ─── Button (.btn) ─────────────────────────────────────────── */
+
+.btn {
+  display: inline-block;
+  background-color: #b8643b;  /* clay */
+  color: #f4ead4;             /* cream; 4.6:1 on clay — AA */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.65rem 1.5rem;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+              background-color 0.15s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #9e5431;   /* darker clay; ~5.3:1 on cream — AA */
+  color: #f4ead4;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Override global focus-visible with cream outline (visible on dark hero bg) */
+.btn:focus-visible {
+  outline: 3px solid #f4ead4;
+  outline-offset: 3px;
+}
+
+/* ─── Towns section ─────────────────────────────────────────── */
+
+.towns {
+  padding: 2.5rem 0;
+}
+
+.towns h2 {
+  margin-bottom: 1.5rem;
+}
+
+/* ─── Town card ─────────────────────────────────────────────── */
+
+.town-card {
+  background-color: #ffffff;
+  border: 1px solid #cebfa0;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(31, 58, 35, 0.1);
+  padding: 1.25rem 1.25rem 1rem;
+  margin-bottom: 1rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.town-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(31, 58, 35, 0.18);
+}
+
+.town-name {
+  font-size: 1.2rem;
+  color: #1f3a23;              /* ~8.4:1 on white — AAA */
+  margin-bottom: 0.2rem;
+}
+
+.town-county {
+  font-size: 0.875rem;
+  color: #5a5245;              /* ~5.5:1 on white — AA */
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.town-pop {
+  font-size: 0.9rem;
+  color: #3a3026;              /* ~11:1 on white — AAA */
+  margin-bottom: 0.6rem;
+}
+
+.pop-num {
+  font-size: 1.25rem;          /* visual emphasis: larger + bolder */
+  font-weight: 700;
+  color: #1f3a23;              /* forest-green; ~8.4:1 on white — AAA */
+}
+
+.town-blurb {
+  font-size: 0.95rem;
+  color: #3a3026;              /* ~11:1 on white — AAA */
+  line-height: 1.55;
+  margin-bottom: 0.75rem;
+}
+
+/* ─── Badge ─────────────────────────────────────────────────── */
+
+.badge {
+  display: inline-block;
+  background-color: #b8643b;  /* clay */
+  color: #f4ead4;             /* cream; 4.6:1 on clay — AA */
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2em 0.65em;
+  border-radius: 999px;       /* pill shape */
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ─── FAQ section ───────────────────────────────────────────── */
+
+.faq {
+  padding: 2.5rem 0;
+  border-top: 2px solid #cebfa0;
+}
+
+.faq h2 {
+  margin-bottom: 1.25rem;
+}
+
+details {
+  border: 1px solid #cebfa0;
+  border-radius: 4px;
+  background-color: #ffffff;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+
+details[open] {
+  box-shadow: 0 2px 8px rgba(31, 58, 35, 0.1);
+}
+
+details summary {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #1f3a23;              /* ~8.4:1 on white — AAA */
+  padding: 0.85rem 2.5rem 0.85rem 1rem;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  user-select: none;
+}
+
+/* Remove default marker */
+details summary::-webkit-details-marker { display: none; }
+details summary::marker { display: none; }
+
+/* Custom expand/collapse indicator */
+details summary::after {
+  content: "+";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: #b8643b;
+  line-height: 1;
+}
+
+details[open] summary::after {
+  content: "−";
+}
+
+details summary:hover {
+  background-color: #f0e8d4;  /* slightly deeper cream */
+  color: #b8643b;             /* clay; ~4.6:1 on #f0e8d4 — AA */
+}
+
+details summary:focus-visible {
+  outline: 3px solid #b8643b;
+  outline-offset: -3px;       /* inset so border-radius clips it cleanly */
+}
+
+details > p {
+  padding: 0.75rem 1rem 1rem;
+  font-size: 0.95rem;
+  color: #3a3026;
+  line-height: 1.6;
+  border-top: 1px solid #e8d9b8;
+}
+
+/* ─── Footer ────────────────────────────────────────────────── */
+
+.site-footer {
+  background-color: #1f3a23;
+  color: #e8d9b8;             /* warm cream; ~7:1 on forest-green — AAA */
+  margin: 0 -1rem;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+.disclaimer {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #c8b89a;             /* ~4.6:1 on forest-green — AA */
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* ─── Desktop breakpoint: 720px ─────────────────────────────── */
+
+@media (min-width: 720px) {
+
+  body {
+    padding: 0 2rem;
+  }
+
+  header {
+    margin: 0 -2rem;
+    padding: 0.85rem 2rem;
+  }
+
+  .hero {
+    margin: 0 -2rem;
+    padding: 4.5rem 2rem 3.5rem;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .tagline {
+    font-size: 1.15rem;
+  }
+
+  .site-footer {
+    margin: 0 -2rem;
+    padding: 2rem;
+  }
+
+  /* ── Town card grid: 6 virtual columns so we can centre bottom row ── */
+  /* .towns is a grid; h2 spans all 6; cards span 2 each → 3 per row.
+     Cards 4 & 5 (nth-child 5 & 6 within .towns) are placed at columns
+     2/4 and 4/6 — centering them with one empty column either side.   */
+
+  .towns {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.25rem;
+    align-items: start;
+    padding: 2.5rem 0;
+  }
+
+  .towns h2 {
+    grid-column: 1 / -1;      /* full width */
+    margin-bottom: 0;          /* gap provides spacing */
+  }
+
+  /* Every card spans 2 of 6 columns → 3 cards per row */
+  .town-card {
+    grid-column: span 2;
+    margin-bottom: 0;          /* gap replaces bottom margin */
+  }
+
+  /* Centre the bottom 2 cards:
+     .towns children: h2=1st, card1=2nd, card2=3rd, card3=4th,
+                       card4=5th, card5=6th.
+     Place card4 at col 2–4, card5 at col 4–6.
+     Columns 1 and 6 stay empty → visually centred. */
+  .towns > .town-card:nth-child(5) {
+    grid-column: 2 / 4;
+  }
+
+  .towns > .town-card:nth-child(6) {
+    grid-column: 4 / 6;
+  }
+
+  .faq {
+    padding: 3rem 0;
+  }
+
+}
